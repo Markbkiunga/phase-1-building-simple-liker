@@ -7,16 +7,12 @@ const hearts = document.querySelectorAll('.like-glyph');
 const errorContainer = document.getElementById('modal');
 const errorMessage = document.getElementById('modal-message');
 
-// console.log(hearts);
 for (let heart of hearts) {
   heart.addEventListener('click', () => {
     mimicServerCall()
       .then((response) => {
         console.log(response);
-        if ((heart.innerTEXT = '&#x2661;')) {
-          heart.innerText = FULL_HEART;
-          heart.classList.add('activated-heart');
-        }
+        heart.classList.toggle('activated-heart');
       })
       .catch((error) => {
         console.error(error);
