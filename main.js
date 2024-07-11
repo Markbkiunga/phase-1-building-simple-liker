@@ -12,6 +12,7 @@ for (let heart of hearts) {
     mimicServerCall()
       .then((response) => {
         console.log(response);
+        heart.innerHTML = FULL_HEART;
         heart.classList.toggle('activated-heart');
       })
       .catch((error) => {
@@ -24,6 +25,7 @@ for (let heart of hearts) {
       });
   });
 }
+
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
 //------------------------------------------------------------------------------
