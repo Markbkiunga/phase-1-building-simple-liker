@@ -12,8 +12,16 @@ for (let heart of hearts) {
     mimicServerCall()
       .then((response) => {
         console.log(response);
-        heart.innerHTML = FULL_HEART;
-        heart.classList.toggle('activated-heart');
+        if (heart.innerText === EMPTY_HEART) {
+          heart.innerText = FULL_HEART;
+          heart.classList.add('activated-heart');
+        } else {
+          heart.innerText = EMPTY_HEART;
+          heart.classList.remove('activated-heart');
+        }
+        //Not fully effective
+        // heart.innerText = FULL_HEART;
+        // heart.classList.toggle('activated-heart');
       })
       .catch((error) => {
         console.error(error);
